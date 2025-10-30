@@ -35,7 +35,7 @@ A reproducible nanoGPT sweep over **128 configurations** on the Tiny Shakespeare
 ├─ model.py                   # nanoGPT (decoder-only Transformer)
 ├─ train.py                   # modified: CSV logging, timing, optional in-train sampling
 ├─ sample.py                  # text generation from a checkpoint (best config checkpoint)
-├─ shakespeare/prepare.py    # builds data/shakespeare/{train, val}.bin
+├─ prepare.py                 # builds  {train, val}.bin
 ├─ generate_configs_128.py    # creates 128 config files across 4 folders
 ├─ run_launcher.py            # runs/auto-resumes configs, optional Drive persistence
 ├─ best_run_analysis.py       # finds best run, plots loss/time curves
@@ -44,7 +44,7 @@ A reproducible nanoGPT sweep over **128 configurations** on the Tiny Shakespeare
 ├─ 3_configs/exp_064.py … exp_095.py
 ├─ 4_configs/exp_096.py … exp_127.py
 ├─ out/exp_000 - exp_127  # consists of all configurations outputs(loss log, loss curves, analysis curves,exp_config.txt)
-└─ shakespeare/          # train.bin / val.bin after prep
+
 ```
 
 ---
