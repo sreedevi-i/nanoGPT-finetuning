@@ -43,6 +43,7 @@ A reproducible nanoGPT sweep over **128 configurations** on the Tiny Shakespeare
 ├─ 2_configs/exp_032.py … exp_063.py
 ├─ 3_configs/exp_064.py … exp_095.py
 ├─ 4_configs/exp_096.py … exp_127.py
+├─ out/exp_000 - exp_127  # consists of all configurations outputs(loss log, loss curves, analysis curves,exp_config.txt)
 └─ shakespeare/          # train.bin / val.bin after prep
 ```
 
