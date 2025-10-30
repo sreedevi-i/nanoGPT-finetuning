@@ -1,0 +1,7 @@
+block_size: 64
+n_layer: 4
+n_head: 4
+n_embd: 256
+batch_size: 8
+max_iters: 2000
+dropout: 0.2
