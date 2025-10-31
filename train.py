@@ -39,7 +39,7 @@ from torch.distributed import init_process_group, destroy_process_group
 from model import GPTConfig, GPT
 
 # ----------------------------------------------------------------------------- #
-# Default config values (same as original)
+# Default config values 
 out_dir = 'out'
 eval_interval = 2000
 log_interval = 1
@@ -74,7 +74,7 @@ device = 'cuda'
 dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16'
 compile = True
 
-# (Optional) qualitative sampling during training
+# ualitative sampling during training
 sample_during_train = False
 sample_prompt = "\n"
 sample_tokens = 128
@@ -116,10 +116,6 @@ np.random.seed(seed)
 torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
 
-# If you want stricter determinism (slower), uncomment:
-# torch.use_deterministic_algorithms(True)
-# torch.backends.cudnn.deterministic = True
-# torch.backends.cudnn.benchmark = False
 
 torch.backends.cuda.matmul.allow_tf32 = True
 torch.backends.cudnn.allow_tf32 = True
@@ -127,7 +123,6 @@ device_type = 'cuda' if 'cuda' in device else 'cpu'
 ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torch.float16}[dtype]
 ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
 
-# ----------------------------------------------------------------------------- #
 # Data loading
 data_dir = os.path.join('data', dataset)
 def get_batch(split):
@@ -147,8 +142,6 @@ def get_batch(split):
 iter_num = 0
 best_val_loss = 1e9
 loss_records = []  #  store (iter, train_loss, val_loss, lr, elapsed_s, iter_ms, throughput_tok_s)
-
-# ----------------------------------------------------------------------------- #
 # Model setup
 meta_path = os.path.join(data_dir, 'meta.pkl')
 meta_vocab_size = None
