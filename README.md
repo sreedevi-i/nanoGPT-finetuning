@@ -9,7 +9,7 @@ A reproducible nanoGPT sweep over **128 configurations** on the Tiny Shakespeare
 * [Overview](#overview)
 * [Repo Structure](#repo-structure)
 * [Setup](#setup)
-* [Data Preparation (Tiny Shakespeare)](#data-preparation-tiny-shakespeare-gpt-2-bpe)
+* [Data Preparation (Shakespeare)](#data-preparation-shakespeare)
 * [Generate All 128 Configs](#generate-all-128-configs)
 * [Run Experiments](#run-experiments)
 * [Logging & Artifacts](#logging--artifacts)
@@ -68,7 +68,7 @@ numpy
 
 ---
 
-## Data Preparation (Tiny Shakespeare, GPT-2 BPE)
+## Data Preparation 
 
 ```bash
 python shakespeare/prepare.py
@@ -176,4 +176,4 @@ python sample.py \
 
 ## License & Acknowledgments
 
-* Built on the nanoGPT codebase (https://github.com/karpathy/nanoGPT.git) concept and Tiny Shakespeare dataset.
+* Built on the nanoGPT codebase (https://github.com/karpathy/nanoGPT.git) concept and the Shakespeare dataset.
